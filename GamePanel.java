@@ -115,12 +115,12 @@ Toolkit.getDefaultToolkit().sync(); //help with smoother animation
 	public void run() {
 		long lastTime = System.nanoTime();
 		double ChecksPerSecond = 60.0;
-		double nanosecInterval = 1000000000 / ChecksPerSecond;
+		double nanosecInterval = 1000000000 / ChecksPerSecond; // the interval is one second (1 billion nanoseconds) divided by checks per second. 
 		double delta = 0;
 		while(true) {
 			long now = System.nanoTime();
 			delta += (now -lastTime)/nanosecInterval;
-			lastTime = now;
+			lastTime = now;  // now that change in time has been accounted for in delta, set lastTime = current time
 			if(delta >=1) {
 				move();
 				checkCollision();
