@@ -8,11 +8,11 @@ public class Paddle extends Rectangle{
 	int speed = 10;
 	
 	Paddle(int x, int y, int PADDLE_WIDTH, int PADDLE_HEIGHT, int id){
-		super(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);
+		super(x,y,PADDLE_WIDTH,PADDLE_HEIGHT);   
 		this.id=id;
 	}
 	
-	public void keyPressed(KeyEvent e) {
+	public void kp(KeyEvent e) {
 		switch(id) {
 		case 1:
 			if(e.getKeyCode()==KeyEvent.VK_W) {
@@ -32,7 +32,7 @@ public class Paddle extends Rectangle{
 			break;
 		}
 	}
-	public void keyReleased(KeyEvent e) {
+	public void kr(KeyEvent e) {
 		switch(id) {
 		case 1:
 			if(e.getKeyCode()==KeyEvent.VK_W) {

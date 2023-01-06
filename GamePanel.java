@@ -113,14 +113,13 @@ Toolkit.getDefaultToolkit().sync(); //help with smoother animation
 		}
 	}
 	public void run() {
-		//game loop
 		long lastTime = System.nanoTime();
-		double amountOfTicks =60.0;
-		double ns = 1000000000 / amountOfTicks;
+		double ChecksPerSecond = 60.0;
+		double nanosecInterval = 1000000000 / ChecksPerSecond;
 		double delta = 0;
 		while(true) {
 			long now = System.nanoTime();
-			delta += (now -lastTime)/ns;
+			delta += (now -lastTime)/nanosecInterval;
 			lastTime = now;
 			if(delta >=1) {
 				move();
@@ -132,12 +131,12 @@ Toolkit.getDefaultToolkit().sync(); //help with smoother animation
 	}
 	public class AL extends KeyAdapter{
 		public void keyPressed(KeyEvent e) {
-			paddle1.keyPressed(e);
-			paddle2.keyPressed(e);
+			paddle1.kp(e);
+			paddle2.kp(e);
 		}
 		public void keyReleased(KeyEvent e) {
-			paddle1.keyReleased(e);
-			paddle2.keyReleased(e);
+			paddle1.kr(e);
+			paddle2.kr(e);
 		}
 	}
 }
